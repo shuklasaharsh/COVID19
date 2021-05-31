@@ -1,23 +1,4 @@
-# Time-series based 7-days ahead forecasts of (known) confirmed cases of the novel Corona virus COVID-19 (2019-nCoV)
-
-**Archived since 2021-01-12**: This repo is archived but still can be forked.
-
-**Statement**: This is just "hobby" project and forecast results *should not* be taken too seriously! Even though forecast performance may be reasonable for some country and some period in time. Don't take the numbers forecast for granted!
-This project is mainly supposed to show what may be realized (without too much effort) with the open-source statistics and econometrics software gretl (URL: http://gretl.sourceforge.net/).
-
-**Minimum gretl version**: At least gretl 2020b.
-
-**An automated job** retrives latest data at 3am (CET), trains a new model, computes the forecasts and uploads the new forecasting plots here to my github-repo. The overall job finishes in about 15 seconds on a Raspberry Pi 4 computer --- this is just an amazing piece of hardware ;-)
-
-## Data source
-Data provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CCSE) can be found here:
-https://github.com/CSSEGISandData/COVID-19
-
-## Some words on the underlying model
-I want to keep it simple. If you fancy, you can use the current state of code as a starting point for devloping and evaluating more complex approaches. However, the ARIMA type of model applied may already provide a reasonable approach for modelling and computing short-term contagion dynamics.
-
-I recently (2020-07-26) switched from simple pre-defined ARIMA models to my official *auto_arima* package for gretl automatcally searching for the "best" model. Details on the auto_arima package can be found here:
-https://github.com/atecon/auto_arima
+# ARIMA BASED COVID19 Time series analysis
 
 The code executes a brute-force search for the 'best' ARIMA model specification by optimizing the corrected Akaike information criteria ("aicc"). The following parameter space -- **implying 120 different ARIMA models in total** -- is evaluated:
 
